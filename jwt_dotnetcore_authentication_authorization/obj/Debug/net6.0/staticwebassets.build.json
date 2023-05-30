@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kpPvKHIZy4tm/woQ/QgcAZsAiiMRnJLJrndG/D6GlZ0=",
+  "Source": "jwt_dotnetcore_authentication_authorization",
+  "BasePath": "_content/jwt_dotnetcore_authentication_authorization",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
