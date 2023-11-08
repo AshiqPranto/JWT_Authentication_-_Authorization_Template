@@ -38,6 +38,7 @@ namespace jwt_dotnetcore_authentication_authorization.Controllers
         private string Generate(UserModel user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("hftOS5uphK3vmCJQrexST1RsyjZBjXWRgJMFPU4"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
@@ -46,7 +47,8 @@ namespace jwt_dotnetcore_authentication_authorization.Controllers
                 new Claim(ClaimTypes.Email, user.EmailAddress),
                 new Claim(ClaimTypes.GivenName, user.GivenName),
                 new Claim(ClaimTypes.Surname, user.Surname),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim("IsAdmin", "true")
             };
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],

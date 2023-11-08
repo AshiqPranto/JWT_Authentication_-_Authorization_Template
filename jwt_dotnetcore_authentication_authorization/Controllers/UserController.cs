@@ -19,7 +19,8 @@ namespace jwt_dotnetcore_authentication_authorization.Controllers
 
 
         [HttpGet("Admins")]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
+        [Authorize(Policy = "ShouldBeAdmin")]
         public IActionResult AdminsEndpoint()
         {
             var currentUser = GetCurrentUser();
